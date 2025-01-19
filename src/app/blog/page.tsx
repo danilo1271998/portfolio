@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { blog } from '@/app/source';
 import TextReveal from '@/components/motion/text-reveal';
 import Line from '@/components/motion/line';
 import React from 'react';
@@ -29,12 +28,6 @@ export const metadata = createMetadata({
 });
 
 export default function BlogPage(): React.ReactElement {
-  const posts = [...blog.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
-  );
-
   return (
     <main className="my-14 flex-1">
       <section
@@ -51,18 +44,6 @@ export default function BlogPage(): React.ReactElement {
           </TextReveal>
           <Line className={'mt-16'} />
         </div>
-      </section>
-      <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">
-        {posts.map((post, index) => (
-          <PostCard
-            title={post.data.title}
-            href={post.url}
-            description={post.data.description}
-            key={`post_${index}`}
-            date={new Date(post.data.date ?? post.file.name)}
-            thumbnail={`/images/blog/${post.slugs[0]}/cover.jpg`}
-          />
-        ))}
       </section>
     </main>
   );
