@@ -11,14 +11,14 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-import { project } from '@/app/source';
+// import { project } from '@/app/source';
 
 function Projects() {
-  const projects = [...project.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
-  );
+  // const projects = [...project.getPages()].sort(
+  //   (a, b) =>
+  //     new Date(b.data.date ?? b.file.name).getTime() -
+  //     new Date(a.data.date ?? a.file.name).getTime()
+  // );
 
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="projects">
@@ -40,7 +40,7 @@ function Projects() {
               }}
               className="w-full"
             >
-              <CarouselContent>
+              {/* <CarouselContent>
                 {projects.map((project, index) => (
                   <CarouselItem
                     key={`project_${index}`}
@@ -57,7 +57,7 @@ function Projects() {
                     </div>
                   </CarouselItem>
                 ))}
-              </CarouselContent>
+              </CarouselContent> */}
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { MDXContent } from '@content-collections/mdx/react';
 
 import { notFound } from 'next/navigation';
-import { project } from '@/app/source';
+// import { project } from '@/app/source';
 
 import Header from './header';
 import Image from 'next/image';
@@ -31,54 +31,54 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params;
   const { slug } = params;
-  const page = project.getPage([slug]);
-  if (!page) notFound();
+  // const page = project.getPage([slug]);
+  // if (!page) notFound();
 
-  return createMetadata({
-    title: page.data.title,
-    description: page.data.description,
-    openGraph: {
-      type: 'article',
-      images: [
-        {
-          alt: 'banner',
-          width: 1200,
-          height: 630,
-          url: `/images/projects/${slug}/cover.jpg`,
-          type: 'image/png'
-        }
-      ],
-      authors: meta.author.name
-      // modifiedTime: page.data.date.toISOString()
-    },
-    twitter: {
-      images: [
-        {
-          alt: 'banner',
-          width: 1200,
-          height: 630,
-          url: `/images/projects/${slug}/cover.jpg`
-        }
-      ]
-    }
-  }) satisfies Metadata;
+  // return createMetadata({
+  //   title: page.data.title,
+  //   description: page.data.description,
+  //   openGraph: {
+  //     type: 'article',
+  //     images: [
+  //       {
+  //         alt: 'banner',
+  //         width: 1200,
+  //         height: 630,
+  //         url: `/images/projects/${slug}/cover.jpg`,
+  //         type: 'image/png'
+  //       }
+  //     ],
+  //     authors: meta.author.name
+  //     // modifiedTime: page.data.date.toISOString()
+  //   },
+  //   twitter: {
+  //     images: [
+  //       {
+  //         alt: 'banner',
+  //         width: 1200,
+  //         height: 630,
+  //         url: `/images/projects/${slug}/cover.jpg`
+  //       }
+  //     ]
+  //   }
+  // }) satisfies Metadata;
 }
 
 export default async function ProjectPage(props0: {
   params: Promise<{ slug: string }>;
 }) {
-  const params = await props0.params;
-  const { slug } = params;
-  const page = project.getPage([slug]);
-  if (!page) notFound();
+  // const params = await props0.params;
+  // const { slug } = params;
+  // const page = project.getPage([slug]);
+  // if (!page) notFound();
 
-  const {
-    data: { toc, body, structuredData }
-  } = page;
+  // const {
+  //   data: { toc, body, structuredData }
+  // } = page;
 
   return (
     <main className="my-14 flex-1">
-      <div className="container mx-auto">
+      {/* <div className="container mx-auto">
         <Header metadata={page.data} />
         <Image
           src={`/images/projects/${slug}/cover.jpg`}
@@ -96,7 +96,7 @@ export default async function ProjectPage(props0: {
             }}
           />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

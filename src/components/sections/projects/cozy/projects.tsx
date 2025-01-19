@@ -3,15 +3,15 @@ import ProjectCard from './project-card';
 
 import MotionWrap from '@/components/motion-wrap';
 
-import { project } from '@/app/source';
+// import { project } from '@/app/source';
 import TextReveal from '@/components/motion/text-reveal';
 
 function Projects() {
-  const projects = [...project.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
-  );
+  // const projects = [...project.getPages()].sort(
+  //   (a, b) =>
+  //     new Date(b.data.date ?? b.file.name).getTime() -
+  //     new Date(a.data.date ?? a.file.name).getTime()
+  // );
 
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="projects">
@@ -31,7 +31,7 @@ function Projects() {
           </p>
         </div>
         {/* todo: limit amount of projects shown here and all view all projects to all sections */}
-        <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        {/* <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
               title={project.data.title}
@@ -42,7 +42,7 @@ function Projects() {
               thumbnail={`/images/projects/${project.slugs[0]}/cover.jpg`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </MotionWrap>
   );

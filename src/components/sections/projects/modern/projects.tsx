@@ -11,15 +11,15 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-import { project } from '@/app/source';
+// import { project } from '@/app/source';
 import TextReveal from '@/components/motion/text-reveal';
 
 function Projects() {
-  const projects = [...project.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
-  );
+  // const projects = [...project.getPages()].sort(
+  //   (a, b) =>
+  //     new Date(b.data.date ?? b.file.name).getTime() -
+  //     new Date(a.data.date ?? a.file.name).getTime()
+  // );
 
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="projects">
@@ -47,7 +47,7 @@ function Projects() {
               }}
               className="w-full"
             >
-              <CarouselContent>
+              {/* <CarouselContent>
                 {projects.map((project, index) => (
                   <CarouselItem
                     key={`project_${index}`}
@@ -64,7 +64,7 @@ function Projects() {
                     </div>
                   </CarouselItem>
                 ))}
-              </CarouselContent>
+              </CarouselContent> */}
 
               {/* todo: look for a nicer design, remove px-12 to see the new design */}
               {/* <CarouselPrevious className='z-[999] left-0 rounded' variant={"default"} />
